@@ -1,11 +1,11 @@
-let cantidadDeIntentos = +prompt("¿cuantas veces quieres jugar?")
+let cantidadDeIntentos = +prompt("¿cuantas veces quieres jugar?");
+let puntajeUsuario = 0;
+let puntajePc = 0;
 
-let i = 1
-while (i <= cantidadDeIntentos) {
 
-    let eleccionUsuario = (prompt("cachipun"))
-    console.log(eleccionUsuario)
+for (let i = 1; i <= cantidadDeIntentos; i++) {
 
+    let eleccionUsuario = (prompt("piedra, papel o tijeras"));
     let opciones = ['piedra', 'papel', 'tijeras'];
     let opcionPc = opciones[Math.floor(Math.random() * opciones.length)];
 
@@ -14,21 +14,31 @@ while (i <= cantidadDeIntentos) {
         eleccionUsuario.toLowerCase() === "papel" && opcionPc === "piedra" ||
         eleccionUsuario.toLowerCase() === "piedra" && opcionPc === "tijeras"
     ) {
-        alert("ganaste")
+        alert("ganaste"); puntajeUsuario++;
+
+    } else if (eleccionUsuario.toLowerCase() === opcionPc) {
+        alert("empate")
     } else {
-        alert("perdiste")
+        alert("perdiste"); puntajePc++;
     }
 
-    if (eleccionUsuario.toLowerCase() === opcionPc) {
-        alert("empate")
-    }
-    i++
 
     console.log(
         `tu turno: ${eleccionUsuario}
          turno PC: ${opcionPc}`
     );
+
+    console.log(eleccionUsuario)
 }
+
+if (puntajeUsuario > puntajePc) {
+    alert(`Felicidades! tienes: ${puntajeUsuario} puntos.`);
+} else if (puntajeUsuario < puntajePc) {
+    alert(`Pc gano con: ${puntajePc} puntos.`);
+} else {
+    alert(`empate!`)
+}
+
 
 
 

@@ -6,7 +6,6 @@ while (i <= cantidadDeIntentos) {
     let eleccionUsuario = (prompt("cachipun"))
     console.log(eleccionUsuario)
 
-    //recomendacion chat gpt 
     let opciones = ['piedra', 'papel', 'tijeras'];
     let opcionPc = opciones[Math.floor(Math.random() * opciones.length)];
 
